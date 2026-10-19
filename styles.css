@@ -1421,3 +1421,64 @@ body { background:#fff; color:#142b43; }
 @media (prefers-reduced-motion:reduce) {
   *,*::before,*::after { scroll-behavior:auto !important; transition-duration:.01ms !important; animation-duration:.01ms !important; }
 }
+
+
+/* Conversion hierarchy: Russian contracting, payment and documents */
+.payment-assurance {
+  position:relative;
+  z-index:5;
+  background:linear-gradient(110deg,#073c91 0%,#145fc3 55%,#0d4ca8 100%);
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.18);
+}
+.payment-assurance-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  align-items:stretch;
+}
+.payment-assurance-item {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  min-height:112px;
+  padding:22px 26px;
+  border-left:1px solid rgba(255,255,255,.22);
+}
+.payment-assurance-item:first-child { border-left:0; }
+.payment-assurance-icon {
+  display:flex;
+  flex:0 0 48px;
+  width:48px;
+  height:48px;
+  align-items:center;
+  justify-content:center;
+  border:1.5px solid rgba(255,255,255,.9);
+  border-radius:50%;
+  color:#fff;
+  font-size:1.45rem;
+  font-weight:700;
+  line-height:1;
+}
+.payment-assurance-item h2 {
+  color:#fff;
+  font-size:1rem;
+  line-height:1.25;
+  margin:0 0 6px;
+  letter-spacing:0;
+}
+.payment-assurance-item p {
+  color:#e2efff;
+  font-size:.86rem;
+  line-height:1.45;
+}
+@media (max-width:900px) {
+  .payment-assurance-grid { grid-template-columns:1fr; }
+  .payment-assurance-item { min-height:88px; padding:18px 20px; border-left:0; border-top:1px solid rgba(255,255,255,.2); }
+  .payment-assurance-item:first-child { border-top:0; }
+  .payment-assurance-icon { flex-basis:42px; width:42px; height:42px; font-size:1.25rem; }
+}
+@media (max-width:600px) {
+  .payment-assurance-item { gap:14px; padding:17px 20px; }
+  .payment-assurance-item h2 { font-size:.98rem; }
+  .payment-assurance-item p { font-size:.84rem; }
+}
